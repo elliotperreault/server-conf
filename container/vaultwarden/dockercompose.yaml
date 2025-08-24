@@ -1,0 +1,22 @@
+---
+services:
+  services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: unless-stopped
+    environment:
+      DOMAIN: "https://vw.ptranet.com"
+    volumes:
+      - ./vw-data/:/data/
+    ports:
+      - 127.0.0.1:8000:80
+    networks:
+      - frontend
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.vaultwarden.rule=Host(`vw.ptranet.com`)"
+      - "traefik.http.routers.vaultwarden.entrypoints=web"
+networks:
+  frontend:
+    external: true
