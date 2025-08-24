@@ -1,6 +1,5 @@
 ---
 services:
-  services:
   vaultwarden:
     image: vaultwarden/server:latest
     container_name: vaultwarden
