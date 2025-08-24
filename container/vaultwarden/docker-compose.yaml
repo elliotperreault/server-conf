@@ -12,10 +12,10 @@ services:
       - 7236:80
     networks:
       - frontend
-#   labels:
-#     - "traefik.enable=true"
-#     - "traefik.http.routers.vaultwarden.rule=Host(`vw.ptranet.com`)"
-#     - "traefik.http.routers.vaultwarden.entrypoints=web"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.vaultwarden.rule=Host(`vw.ptranet.com`)"
+      - "traefik.http.routers.vaultwarden.entrypoints=web"
 networks:
   frontend:
     external: true
