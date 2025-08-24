@@ -9,7 +9,7 @@ services:
     volumes:
       - ./vw-data/:/data/
     ports:
-      - 7236:80
+      - 127.0.0.1:7236:80
     networks:
       - frontend
     labels:
